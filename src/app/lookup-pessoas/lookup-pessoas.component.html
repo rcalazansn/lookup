@@ -1,0 +1,54 @@
+Lookup com Filtro (multiple)
+<ng-select 
+            [items]="ListaPessoasAssync | async" 
+            bindLabel="nome" 
+            [showFilterModal]="true" 
+            [multiple]="true" 
+            (showFilter)="showModal()"
+            [loading]="people3Loading" 
+            [typeahead]="people3input$"
+            [(ngModel)]="selectedLookupFiltroMultiple">
+</ng-select>
+{{selectedLookupFiltroMultiple | json}}
+
+<br><br><hr><br><br>
+
+Lookup com Filtro (Single)
+<ng-select 
+            [items]="ListaPessoasAssync | async" 
+            bindLabel="nome" 
+            [showFilterModal]="true" 
+            [multiple]="false" 
+            (showFilter)="showModal()"
+            [loading]="people3Loading" 
+            [typeahead]="people3input$"
+            [(ngModel)]="selectedLookupFiltroSigle">
+</ng-select>
+{{selectedLookupFiltroSigle | json}}
+
+<br><br><hr><br><br>
+
+
+Lookup sem Filtro (multiple)
+<ng-select 
+            [items]="ListaPessoas" 
+            bindLabel="nome" 
+            bindValue="id"
+            [multiple]="true" 
+            [loading]="people3Loading" 
+            [(ngModel)]="selectedLookupMultiple">
+</ng-select>
+{{selectedLookupMultiple | json}}
+
+<br><br><hr><br><br>
+
+Lookup sem Filtro (single)
+<ng-select 
+            [items]="ListaPessoas" 
+            bindLabel="nome" 
+            bindValue="id"
+            [multiple]="false" 
+            [loading]="people3Loading" 
+            [(ngModel)]="selectedLookupSigle">
+</ng-select>
+{{selectedLookupSigle | json}}
